@@ -34,6 +34,7 @@ Ensure you have the following environment variables set:
 ```
 MACHSHIP_API_BASE_URL=https://api.machship.com
 MACHSHIP_API_TOKEN=your-api-token
+MACHSHIP_API_SECRET=your-api-secret
 ```
 
 ## Usage
