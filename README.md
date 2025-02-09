@@ -34,7 +34,6 @@ Ensure you have the following environment variables set:
 ```
 MACHSHIP_API_BASE_URL=https://api.machship.com
 MACHSHIP_API_TOKEN=your-api-token
-MACHSHIP_API_SECRET=your-api-secret
 ```
 
 ## Usage
@@ -70,6 +69,67 @@ class ExampleController {
 ```
 
 ## Available Services
+
+### Attachments
+```php
+Machship::attachments()->getAttachment($id);
+Machship::attachments()->uploadAttachments($attachments);
+Machship::attachments()->getAttachmentPodReport($id);
+Machship::attachments()->getAttachmentsByConsignmentIds($ids);
+```
+
+### Authentication
+```php
+Machship::authenticate()->ping();
+```
+
+### Carrier Invoices
+```php
+Machship::carrierInvoices()->getAllCarrierInvoices();
+Machship::carrierInvoices()->getEntriesForInvoice($invoiceId);
+Machship::carrierInvoices()->updateAndRepriceConsignment($repriceData);
+Machship::carrierInvoices()->attemptAutoReconciliation($reconciliationRequest);
+```
+
+### Companies
+```php
+Machship::companies()->getAllCompanies();
+Machship::companies()->getAvailableCarriersAccountsAndServices($companyId);
+```
+
+### Company Items
+```php
+Machship::companyItems()->getCompanyItem($id);
+Machship::companyItems()->getAllCompanyItems($companyId, $startIndex, $retrieveSize);
+Machship::companyItems()->getCompanyItemBySku($companyId, $sku);
+Machship::companyItems()->createComplexCompanyItem($companyId, $itemData);
+Machship::companyItems()->deleteCompanyItem($companyItemId);
+```
+
+### Company Locations
+```php
+Machship::companyLocations()->getCompanyLocation($id);
+Machship::companyLocations()->getAllCompanyLocations($companyId);
+Machship::companyLocations()->createCompanyLocation($locationData);
+Machship::companyLocations()->editCompanyLocation($locationData);
+Machship::companyLocations()->getPermanentPickupsForCompanyLocation($companyLocationId);
+Machship::companyLocations()->addPermanentPickupsToCompanyLocation($pickupData);
+```
+
+### Consignments
+```php
+Machship::consignments()->getConsignment($id);
+Machship::consignments()->getUnmanifestedConsignmentForEdit($id);
+Machship::consignments()->returnConsignmentsByPendingConsignmentIds($ids);
+Machship::consignments()->returnConsignments($ids);
+Machship::consignments()->returnConsignmentsByCarrierConsignmentId($carrierConsignmentIds);
+Machship::consignments()->returnConsignmentStatuses($ids, $sinceDateCreatedUtc);
+Machship::consignments()->createConsignment($consignmentData);
+Machship::consignments()->editUnmanifestedConsignment($consignmentData);
+Machship::consignments()->deleteUnmanifestedConsignments($consignmentIds);
+Machship::consignments()->searchConsignments($references);
+```
+
 
 ### Attachments
 ```php
@@ -113,5 +173,5 @@ This package is a work in progress and does not implement all Machship services.
 This package is for demonstration purposes only and is not intended for production use.
 
 ## Author
-Created by Joshua Paylaga as a personal learning project.
+Created by [Your Name] as a personal learning project.
 
