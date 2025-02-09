@@ -112,5 +112,5 @@ This package is a work in progress and does not implement all Machship services.
 This package is for demonstration purposes only and is not intended for production use.
 
 ## Author
-Created by [Your Name] as a personal learning project.
+Created by Joshua Paylaga as a personal learning project.
 
